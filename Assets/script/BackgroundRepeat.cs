@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class BackgroundRepeat : MonoBehaviour
 {
-    //½ºÅ©·ÑÇÒ ¼Óµµ¸¦ »ó¼ö·Î ÁöÁ¤.
+    //ï¿½ï¿½Å©ï¿½ï¿½ï¿½ï¿½ ï¿½Óµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.
     public float scrollSpeed = 1.2f;
-    //ÄõµåÀÇ ¸ÓÅÍ¸®¾ó Å×ÀÌÅÍ¸¦ ¹Þ¾Æ¿Ã °´Ã¼¸¦ ¼±¾ð.
+    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Í¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Í¸ï¿½ ï¿½Þ¾Æ¿ï¿½ ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.
     private Material thisMaterial;
 
     // Start is called before the first frame update
     void Start()
     {
-        //°´Ã¼°¡ »ý¼ºµÉ¶§ ÃÖÃÊ 1È¸ È£ÃâµÇ´Â ÇÔ¼ö
-        //ÇöÀç °´Ã¼ÀÇ ComponentµéÀ» ÂüÁ¶ÇØ Renderer¶ó´Â ÄÄÆ÷³ÍÆ®ÀÇ MaterialÁ¤º¸¸¦ ¹Þ¾Æ¿È
+        //ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½É¶ï¿½ ï¿½ï¿½ï¿½ï¿½ 1È¸ È£ï¿½ï¿½Ç´ï¿½ ï¿½Ô¼ï¿½
+        //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼ï¿½ï¿½ Componentï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Rendererï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ Materialï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¾Æ¿ï¿½
 
         thisMaterial = GetComponent<Renderer>().material;
 
@@ -22,13 +22,12 @@ public class BackgroundRepeat : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //»õ·Ó°Ô ÁöÁ¤ÇØÁÙ Offset °´Ã¼¸¦ ¼±¾ð
+        //ï¿½ï¿½ï¿½Ó°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Offset ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         Vector2 newoffset = thisMaterial.mainTextureOffset;
-        //YºÎºÐ¿¡ ÇöÀç y°ª¿¡ ¼Óµµ¿¡ ÇÁ·¹ÀÓ º¸Á¤À» ÇØ¼­ ´õÇØÁÜ
+        //Yï¿½ÎºÐ¿ï¿½ ï¿½ï¿½ï¿½ï¿½ yï¿½ï¿½ï¿½ï¿½ ï¿½Óµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ø¼ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         newoffset.Set(0, newoffset.y + (scrollSpeed * Time.deltaTime));
-        //ÃÖÁ¾ÀûÀ¸·Î offset°ªÀ» ÁöÁ¤ÇØÁÜ
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ offsetï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         thisMaterial.mainTextureOffset = newoffset;
-
 
 
     }
