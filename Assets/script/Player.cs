@@ -1,23 +1,38 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    //¿òÁ÷ÀÌ´Â ¼Óµµ¸¦ Á¤ÀÇ
-    public float moveSpeed = 5.0f;
+    //ï¿½ï¿½ï¿½ï¿½ï¿½Ì´ï¿½ ï¿½Óµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+    public float moveSpeed = 1.2f;
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        //ÁöÁ¤ÇÑ Axis¸¦ ÅëÇØ Å°ÀÇ ¹æÇâÀ» ÆÇ´ÜÇÏ°í ¼Óµµ¿Í ÇÁ·¹ÀÓ ÆÇÁ¤À» °öÇØ ÀÌµ¿·®À» Á¤ÇÑ´Ù.
+        movecontroll();
+    }
+
+    void movecontroll()
+    {
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Axisï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Å°ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ç´ï¿½ï¿½Ï°ï¿½ ï¿½Óµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ñ´ï¿½.
         float distanceX = Input.GetAxis("Horizontal") * Time.deltaTime * moveSpeed;
-        //ÀÌµ¿·®¸¸Å­ ½ÇÁ¦·Î ÀÌµ¿À» ÇØÁÖ´Â ÇÔ¼ö
+
         transform.Translate(distanceX, 0, 0);
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Enemy")
+        {
+            Destroy(collision.gameObject);
+            Destroy(gameObject);
+        }
+    }
+
 }

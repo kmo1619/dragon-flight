@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class enemy : MonoBehaviour
 {
-    //¿òÁ÷ÀÏ ¼Óµµ¸¦ ÁöÁ¤ÇØ ÁÝ´Ï´Ù.
+    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Óµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ý´Ï´ï¿½.
     public float moveSpeed = 1.3f;
 
     // Start is called before the first frame update
@@ -16,9 +16,9 @@ public class enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //¿òÁ÷ÀÏ °Å¸®¸¦ °è»êÇØÁÝ´Ï´Ù.
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Å¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý´Ï´ï¿½.
         float distanceY = moveSpeed * Time.deltaTime;
-        //¿òÁ÷ÀÓÀ» ¹Ý¿µÇÕ´Ï´Ù.
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ý¿ï¿½ï¿½Õ´Ï´ï¿½.
         transform.Translate(0, -distanceY, 0);
     }
 }
