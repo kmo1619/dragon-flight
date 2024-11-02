@@ -21,4 +21,8 @@ public class enemy : MonoBehaviour
         //�������� �ݿ��մϴ�.
         transform.Translate(0, -distanceY, 0);
     }
+    private void OnBecameInvisible()
+    {
+        Destroy(gameObject);
+    }
 }
