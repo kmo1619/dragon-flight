@@ -29,6 +29,7 @@ public class Bullet : MonoBehaviour
             Instantiate(explosion, transform.position, Quaternion.identity);
             Destroy(collision.gameObject);//적 지우기
             Destroy(this.gameObject);//총알 지우기
+            SoundManager.instance.SoundDie();
         }
     }
 
