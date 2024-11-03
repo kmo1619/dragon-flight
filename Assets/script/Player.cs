@@ -22,7 +22,7 @@ public class Player : MonoBehaviour
     void movecontroll()
     {
         //������ Axis�� ���� Ű�� ������ �Ǵ��ϰ� �ӵ��� ������ ������ ���� �̵����� ���Ѵ�.
-        float distanceX = Input.GetAxis("Horizontal") * Time.deltaTime * moveSpeed;
+        float distanceX = Input.GetAxisRaw("Horizontal") * Time.deltaTime * moveSpeed;
 
         transform.Translate(distanceX, 0, 0);
     }
