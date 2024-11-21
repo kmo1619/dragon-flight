@@ -28,6 +28,8 @@ public class Bullet : MonoBehaviour
             //폭발 이펙트 생성
             Instantiate(explosion, transform.position, Quaternion.identity);
             Destroy(collision.gameObject);//적 지우기
+            //점수 올리기
+            GameManager.Instance.AddScore(10);
             Destroy(this.gameObject);//총알 지우기
             SoundManager.instance.SoundDie();
         }

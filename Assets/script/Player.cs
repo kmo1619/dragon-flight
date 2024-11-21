@@ -21,7 +21,10 @@ public class Player : MonoBehaviour
 
     void movecontroll()
     {
-        //������ Axis�� ���� Ű�� ������ �Ǵ��ϰ� �ӵ��� ������ ������ ���� �̵����� ���Ѵ�.
+        //GetAxis는 점진적으로 속도가 증가 감소
+        //float distanceX = Input.GetAxis("Horizontal") * Time.deltaTime * moveSpeed;
+
+        //GetAxisRaw는 입력값에 따라 속도가 0과 1로 구분됨
         float distanceX = Input.GetAxisRaw("Horizontal") * Time.deltaTime * moveSpeed;
 
         transform.Translate(distanceX, 0, 0);

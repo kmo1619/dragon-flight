@@ -25,4 +25,8 @@ public class enemy : MonoBehaviour
     {
         Destroy(gameObject);
     }
+    void OnBecameinvisible()//화면밖으로 나가면
+    {
+        Destroy(this);
+    }
 }
